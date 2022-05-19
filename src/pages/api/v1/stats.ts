@@ -1,6 +1,7 @@
-import type { NextApiRequest, NextApiResponse } from "next"
+//NextApiRequest,
+import type { NextApiResponse } from "next"
 
-export default async function apiResult(req: NextApiRequest, res: NextApiResponse) {
+export default async function apiResult(/*req: NextApiRequest,*/ res: NextApiResponse) {
 
     const result = {
         "total_value_locked": "3053358.84966793253745727328352184554737",

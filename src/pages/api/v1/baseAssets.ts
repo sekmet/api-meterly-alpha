@@ -1,16 +1,28 @@
-import type { NextApiRequest, NextApiResponse } from "next"
+//NextApiRequest,
+import type { NextApiResponse } from "next"
 
-export default async function apiResult(req: NextApiRequest, res: NextApiResponse) {
-
+export default async function apiResult(/*req: NextApiRequest,*/ res: NextApiResponse) {
     const result = [
+        {
+            "id": 3,
+            "chainId": 83,
+            "name": "Solidly",
+            "symbol": "SOLID",
+            "address": "0xDEF77D972194E1C882a5Ca008f2917b45208dD73",
+            "decimals": 18,
+            "logoURI": "https://raw.githubusercontent.com/meterio/token-list/master/data/MTR/logo.png",
+            "isWhitelisted": true,
+            "isDisplay": true,
+            "whiteTime": "2022-04-01T09:48:00Z"
+        },
         {
             "id": 16,
             "chainId": 83,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+            "name": "Meter Governance",
+            "symbol": "MTRG",
+            "address": "0x8A419Ef4941355476cf04933E90Bf3bbF2F73814",
             "decimals": 18,
-            "logoURI": "https://assets-cdn.trustwallet.com/blockchains/smartchain/assets/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d/logo.png",
+            "logoURI": "https://raw.githubusercontent.com/meterio/token-list/master/data/MTRG/logo.png",
             "isWhitelisted": true,
             "isDisplay": true,
             "whiteTime": "2022-04-01T09:48:00Z"
@@ -22,7 +34,7 @@ export default async function apiResult(req: NextApiRequest, res: NextApiRespons
             "symbol": "WMTR",
             "address": "0x55E22D0dDD17FDd3F5bB2A87E8bea1f81FAcBe63",
             "decimals": 18,
-            "logoURI": "https://assets-cdn.trustwallet.com/blockchains/smartchain/assets/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/logo.png",
+            "logoURI": "https://raw.githubusercontent.com/meterio/token-list/master/data/MTR/logo.png",
             "isWhitelisted": true,
             "isDisplay": true,
             "whiteTime": "2022-04-01T09:48:00Z"
@@ -33,7 +45,7 @@ export default async function apiResult(req: NextApiRequest, res: NextApiRespons
             "name": "Tether USD",
             "symbol": "USDT",
             "address": "0x9651B11A024954B713C03b8E8DeB0CdFa5291CE9",
-            "decimals": 18,
+            "decimals": 6,
             "logoURI": "https://assets-cdn.trustwallet.com/blockchains/smartchain/assets/0x55d398326f99059fF775485246999027B3197955/logo.png",
             "isWhitelisted": true,
             "isDisplay": true,

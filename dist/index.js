@@ -44,6 +44,8 @@ var next_1 = __importDefault(require("next"));
 var dev = process.env.NODE_ENV !== "production";
 var app = (0, next_1.default)({ dev: dev });
 var handle = app.getRequestHandler();
+var bodyParser = require('body-parser');
+var cors = require("cors");
 var port = process.env.PORT || 3000;
 var host = process.env.HOST || "localhost";
 (function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -52,25 +54,28 @@ var host = process.env.HOST || "localhost";
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, app.prepare()];
+                return [4, app.prepare()];
             case 1:
                 _a.sent();
                 server = (0, express_1.default)();
+                server.use(bodyParser.json());
+                server.use(cors());
                 server.all("*", function (req, res) {
                     return handle(req, res);
                 });
                 server.listen(port, function (err) {
                     if (err)
                         throw err;
-                    console.log("> Ready on localhost:".concat(port, " - env ").concat(process.env.NODE_ENV));
+                    console.log("> Server ready on ".concat(host, ":").concat(port, " - env [ ").concat(process.env.NODE_ENV, " ]"));
                 });
-                return [3 /*break*/, 3];
+                return [3, 3];
             case 2:
                 e_1 = _a.sent();
                 console.error(e_1);
                 process.exit(1);
-                return [3 /*break*/, 3];
-            case 3: return [2 /*return*/];
+                return [3, 3];
+            case 3: return [2];
         }
     });
 }); })();
+//# sourceMappingURL=index.js.map
